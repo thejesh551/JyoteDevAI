@@ -1,0 +1,1369 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>AI | Space | Biotech – Deep Tech Company</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A deep-tech company unifying Space, Artificial Intelligence, and Life Sciences."
+    />
+    <style>
+      :root {
+        --bg-dark: #050814;
+        --bg-section: #070b1c;
+        --bg-card: #0c1024;
+        --accent: #4f46e5;
+        --accent-soft: rgba(79, 70, 229, 0.25);
+        --accent-secondary: #22d3ee;
+        --accent-biotech: #22c55e;
+        --text-main: #f9fafb;
+        --text-muted: #9ca3af;
+        --border-subtle: #1f2937;
+        --max-width: 1120px;
+        --radius-lg: 18px;
+        --radius-md: 12px;
+        --radius-pill: 999px;
+        --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.45);
+        --shadow-subtle: 0 10px 30px rgba(0, 0, 0, 0.35);
+        --font-main: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+          "Segoe UI", sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: var(--font-main);
+        background: radial-gradient(
+          circle at top,
+          #111827 0,
+          #020617 42%,
+          #020617 100%
+        );
+        color: var(--text-main);
+        scroll-behavior: smooth;
+      }
+
+      body {
+        line-height: 1.6;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      /* Layout */
+
+      .page {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      header,
+      main,
+      footer {
+        width: 100%;
+      }
+
+      .nav-shell,
+      .section-shell,
+      .footer-shell {
+        width: 100%;
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Top Nav */
+
+      .nav {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        backdrop-filter: blur(18px);
+        background: linear-gradient(
+          to bottom,
+          rgba(2, 6, 23, 0.92),
+          rgba(2, 6, 23, 0.75),
+          rgba(2, 6, 23, 0)
+        );
+        border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+      }
+
+      .nav-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 0;
+        gap: 16px;
+      }
+
+      .logo-mark {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .logo-icon {
+        width: 38px;
+        height: 38px;
+        border-radius: 30%;
+        background: radial-gradient(
+          circle at 30% 20%,
+          #22d3ee 0,
+          #4f46e5 35%,
+          #0f172a 65%,
+          #020617 100%
+        );
+        box-shadow: 0 0 0 1px rgba(148, 163, 184, 0.35),
+          0 0 25px rgba(79, 70, 229, 0.65);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .logo-orbit {
+        position: absolute;
+        inset: 4px;
+        border-radius: 999px;
+        border: 1px solid rgba(248, 250, 252, 0.35);
+        border-top-color: transparent;
+        border-left-color: transparent;
+        transform: rotate(-18deg);
+      }
+
+      .logo-text-main {
+        font-weight: 600;
+        letter-spacing: 0.07em;
+        font-size: 0.9rem;
+      }
+
+      .logo-text-sub {
+        font-size: 0.78rem;
+        color: var(--text-muted);
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        font-size: 0.9rem;
+      }
+
+      .nav-links a {
+        color: var(--text-muted);
+        padding: 6px 0;
+        border-bottom: 1px solid transparent;
+        transition: color 0.18s ease, border-color 0.18s ease;
+      }
+
+      .nav-links a:hover {
+        color: var(--text-main);
+        border-bottom-color: rgba(148, 163, 184, 0.5);
+      }
+
+      .nav-cta {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: var(--radius-pill);
+        padding: 9px 18px;
+        font-size: 0.86rem;
+        border: 1px solid transparent;
+        cursor: pointer;
+        transition: background 0.18s ease, color 0.18s ease,
+          border-color 0.18s ease, transform 0.12s ease, box-shadow 0.12s ease;
+        white-space: nowrap;
+      }
+
+      .btn-primary {
+        background: radial-gradient(circle at top left, #38bdf8, #4f46e5);
+        color: #f9fafb;
+        box-shadow: 0 14px 28px rgba(15, 23, 42, 0.75);
+        border-color: rgba(129, 140, 248, 0.5);
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 18px 40px rgba(15, 23, 42, 0.95);
+      }
+
+      .btn-ghost {
+        background: rgba(15, 23, 42, 0.7);
+        color: var(--text-muted);
+        border-color: rgba(148, 163, 184, 0.35);
+      }
+
+      .btn-ghost:hover {
+        color: var(--text-main);
+        background: rgba(15, 23, 42, 0.95);
+      }
+
+      .nav-mobile-toggle {
+        display: none;
+        width: 34px;
+        height: 34px;
+        border-radius: 999px;
+        border: 1px solid rgba(148, 163, 184, 0.5);
+        background: rgba(15, 23, 42, 0.85);
+        color: var(--text-main);
+        align-items: center;
+        justify-content: center;
+        font-size: 1.1rem;
+        cursor: pointer;
+      }
+
+      /* Hero */
+
+      .hero {
+        padding: 70px 0 80px;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+        gap: 40px;
+        align-items: center;
+      }
+
+      .hero-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        border-radius: var(--radius-pill);
+        padding: 5px 10px 5px 5px;
+        background: rgba(15, 23, 42, 0.85);
+        border: 1px solid rgba(148, 163, 184, 0.4);
+        color: var(--text-muted);
+        font-size: 0.75rem;
+        margin-bottom: 16px;
+      }
+
+      .pill-dot {
+        width: 20px;
+        height: 20px;
+        border-radius: 999px;
+        background: radial-gradient(
+          circle at 25% 20%,
+          #22c55e,
+          #22d3ee,
+          #4f46e5
+        );
+        box-shadow: 0 0 18px rgba(59, 130, 246, 0.95);
+      }
+
+      .hero-title {
+        font-size: clamp(2.4rem, 3.4vw, 3.6rem);
+        line-height: 1.15;
+        letter-spacing: -0.03em;
+        margin: 0 0 16px;
+      }
+
+      .hero-title span {
+        background: linear-gradient(to right, #38bdf8, #a855f7, #22c55e);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .hero-sub {
+        max-width: 540px;
+        color: var(--text-muted);
+        font-size: 0.98rem;
+        margin-bottom: 24px;
+      }
+
+      .hero-ctas {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        align-items: center;
+        margin-bottom: 24px;
+      }
+
+      .hero-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px;
+        font-size: 0.78rem;
+        color: var(--text-muted);
+      }
+
+      .hero-meta-item strong {
+        color: var(--text-main);
+        font-weight: 500;
+      }
+
+      .hero-orbit-card {
+        background: radial-gradient(circle at top, #0b1120 0, #020617 65%);
+        border-radius: 30px;
+        padding: 20px;
+        border: 1px solid rgba(148, 163, 184, 0.25);
+        box-shadow: var(--shadow-soft);
+        position: relative;
+        overflow: hidden;
+        min-height: 260px;
+      }
+
+      .hero-orbit-glow {
+        position: absolute;
+        width: 220px;
+        height: 220px;
+        border-radius: 999px;
+        background: radial-gradient(
+          circle,
+          rgba(56, 189, 248, 0.26),
+          transparent 70%
+        );
+        top: -60px;
+        right: -40px;
+        filter: blur(1px);
+      }
+
+      .hero-orbit-core {
+        position: absolute;
+        width: 140px;
+        height: 140px;
+        border-radius: 999px;
+        background: radial-gradient(
+          circle at 30% 20%,
+          #22c55e,
+          #38bdf8,
+          #4f46e5
+        );
+        top: 34px;
+        right: 40px;
+        box-shadow: 0 0 0 1px rgba(148, 163, 184, 0.35),
+          0 0 40px rgba(37, 99, 235, 0.9);
+      }
+
+      .hero-orbit-ring {
+        position: absolute;
+        inset: 32px 24px auto auto;
+        width: 180px;
+        height: 180px;
+        border-radius: 999px;
+        border: 1px dashed rgba(148, 163, 184, 0.35);
+        transform: rotate(-18deg);
+      }
+
+      .hero-orbit-pills {
+        position: relative;
+        margin-top: 8px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        max-width: 220px;
+      }
+
+      .tag-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        border-radius: var(--radius-pill);
+        padding: 4px 10px;
+        font-size: 0.7rem;
+        background: rgba(15, 23, 42, 0.82);
+        border: 1px solid rgba(148, 163, 184, 0.4);
+        color: var(--text-muted);
+        backdrop-filter: blur(12px);
+        position: relative;
+        z-index: 2;
+      }
+
+      .tag-chip span.dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 999px;
+      }
+
+      .dot-space {
+        background: #38bdf8;
+      }
+      .dot-ai {
+        background: #a855f7;
+      }
+      .dot-bio {
+        background: #22c55e;
+      }
+
+      .hero-orbit-heading {
+        position: relative;
+        z-index: 2;
+        font-size: 0.86rem;
+        color: var(--text-muted);
+        margin-bottom: 10px;
+      }
+
+      .hero-orbit-heading strong {
+        color: var(--text-main);
+        font-weight: 500;
+      }
+
+      .hero-orbit-footer {
+        position: absolute;
+        left: 20px;
+        right: 20px;
+        bottom: 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.7rem;
+        color: var(--text-muted);
+      }
+
+      .pill-soft {
+        border-radius: var(--radius-pill);
+        padding: 4px 9px;
+        border: 1px solid rgba(148, 163, 184, 0.35);
+        background: rgba(15, 23, 42, 0.85);
+      }
+
+      /* Sections */
+
+      section {
+        padding: 20px 0;
+        border-top: 1px solid rgba(17, 24, 39, 0.9);
+        background: radial-gradient(
+          circle at top,
+          rgba(15, 23, 42, 0.55),
+          rgba(2, 6, 23, 0.98)
+        );
+      }
+
+      .section-header {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        margin-bottom: 28px;
+      }
+
+      .section-kicker {
+        font-size: 1.6rem;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        color: var(--text-muted);
+        margin: 0;
+      }
+
+      .section-title {
+        font-size: 1.6rem;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        margin: 0;
+        color: var(--text-muted);
+      }
+
+      .section-desc {
+        font-size: 1rem;
+        color: var(--text-muted);
+        /* max-width: 620px; */
+      }
+
+      /* About / Vision */
+
+      .about-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+        gap: 26px;
+        align-items: start;
+      }
+
+      .about-pill-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 12px;
+      }
+
+      .about-pill {
+        border-radius: var(--radius-pill);
+        padding: 6px 11px;
+        background: rgba(15, 23, 42, 0.9);
+        border: 1px solid rgba(148, 163, 184, 0.5);
+        font-size: 0.76rem;
+        color: var(--text-muted);
+      }
+
+      .about-card {
+        border-radius: var(--radius-lg);
+        padding: 16px 16px 14px;
+        background: radial-gradient(
+          circle at top left,
+          rgba(37, 99, 235, 0.3),
+          #020617
+        );
+        border: 1px solid rgba(148, 163, 184, 0.4);
+        box-shadow: var(--shadow-subtle);
+        font-size: 0.86rem;
+        color: var(--text-muted);
+      }
+
+      .about-card h3 {
+        margin: 0 0 6px;
+        font-size: 0.96rem;
+      }
+
+      .about-card ul {
+        list-style: none;
+        padding: 0;
+        margin: 6px 0 0;
+      }
+
+      .about-card li {
+        margin-bottom: 4px;
+      }
+
+      .dot-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 0.8rem;
+        color: var(--text-muted);
+      }
+
+      .dot-badge span {
+        width: 9px;
+        height: 9px;
+        border-radius: 999px;
+        background: #22d3ee;
+      }
+
+      .cards-row {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .card {
+        border-radius: var(--radius-lg);
+        padding: 18px 16px;
+        background: radial-gradient(
+          circle at top,
+          rgba(15, 23, 42, 0.9),
+          #020617
+        );
+        border: 1px solid rgba(31, 41, 55, 0.95);
+        box-shadow: var(--shadow-subtle);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .card-tag {
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        color: var(--text-muted);
+        margin-bottom: 6px;
+      }
+
+      .card-title {
+        font-size: 1rem;
+        margin-bottom: 6px;
+      }
+
+      .card p {
+        font-size: 0.86rem;
+        color: var(--text-muted);
+        margin-bottom: 10px;
+      }
+
+      .card ul {
+        margin: 0 0 10px;
+        padding-left: 16px;
+        font-size: 0.84rem;
+        color: var(--text-muted);
+      }
+
+      .card ul li {
+        margin-bottom: 4px;
+      }
+
+      .card-cta {
+        font-size: 0.8rem;
+        color: #93c5fd;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+      }
+
+      .card-cta span.arrow {
+        font-size: 0.9rem;
+      }
+
+      .card-orbit {
+        position: absolute;
+        width: 120px;
+        height: 120px;
+        border-radius: 999px;
+        border: 1px solid rgba(148, 163, 184, 0.25);
+        opacity: 0.6;
+        right: -60px;
+        top: -40px;
+      }
+
+      .card-orbit-accent {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        border-radius: 999px;
+        right: -14px;
+        top: 10px;
+        background: radial-gradient(
+          circle,
+          rgba(56, 189, 248, 0.4),
+          transparent
+        );
+        filter: blur(1px);
+      }
+
+      .card-space .card-orbit-accent {
+        background: radial-gradient(
+          circle,
+          rgba(56, 189, 248, 0.6),
+          transparent
+        );
+      }
+
+      .card-ai .card-orbit-accent {
+        background: radial-gradient(
+          circle,
+          rgba(168, 85, 247, 0.6),
+          transparent
+        );
+      }
+
+      .card-bio .card-orbit-accent {
+        background: radial-gradient(
+          circle,
+          rgba(34, 197, 94, 0.6),
+          transparent
+        );
+      }
+
+      /* Roadmap */
+
+      .roadmap-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
+        gap: 24px;
+      }
+
+      .roadmap-column {
+        border-radius: var(--radius-lg);
+        padding: 16px;
+        background: radial-gradient(
+          circle at top,
+          rgba(15, 23, 42, 0.9),
+          #020617
+        );
+        border: 1px solid rgba(31, 41, 55, 0.95);
+        box-shadow: var(--shadow-subtle);
+        font-size: 0.86rem;
+      }
+
+      .roadmap-item {
+        padding: 10px 0;
+        border-bottom: 1px dashed rgba(55, 65, 81, 0.8);
+      }
+
+      .roadmap-item:last-child {
+        border-bottom: none;
+      }
+
+      .roadmap-phase {
+        font-size: 0.78rem;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        color: var(--text-muted);
+        margin-bottom: 3px;
+      }
+
+      .roadmap-title {
+        font-weight: 500;
+        margin-bottom: 2px;
+      }
+
+      .roadmap-meta {
+        font-size: 0.8rem;
+        color: var(--text-muted);
+      }
+
+      .roadmap-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 8px;
+      }
+
+      .roadmap-tag {
+        font-size: 0.72rem;
+        padding: 4px 9px;
+        border-radius: var(--radius-pill);
+        border: 1px solid rgba(75, 85, 99, 0.9);
+        color: var(--text-muted);
+        background: rgba(15, 23, 42, 1);
+      }
+
+      .roadmap-milestones {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-top: 4px;
+      }
+
+      .milestone-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 0.8rem;
+        color: var(--text-muted);
+      }
+
+      .milestone-row strong {
+        color: var(--text-main);
+        font-weight: 500;
+      }
+
+      /* Cross-domain */
+
+      .integration-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .integration-card {
+        border-radius: var(--radius-md);
+        padding: 14px 12px;
+        background: radial-gradient(
+          circle at top,
+          rgba(15, 23, 42, 0.9),
+          #020617
+        );
+        border: 1px solid rgba(31, 41, 55, 0.95);
+        font-size: 0.8rem;
+        color: var(--text-muted);
+      }
+
+      .integration-card h3 {
+        margin: 0 0 4px;
+        font-size: 0.85rem;
+      }
+
+      .badge-future {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 0.68rem;
+        border-radius: var(--radius-pill);
+        padding: 3px 8px;
+        border: 1px solid rgba(129, 140, 248, 0.7);
+        color: #c7d2fe;
+        background: rgba(15, 23, 42, 0.9);
+      }
+
+      /* R&D */
+
+      .rd-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+        font-size: 0.84rem;
+      }
+
+      .rd-card {
+        border-radius: var(--radius-md);
+        padding: 14px 12px;
+        background: radial-gradient(
+          circle at top,
+          rgba(15, 23, 42, 0.95),
+          #020617
+        );
+        border: 1px solid rgba(31, 41, 55, 0.95);
+        color: var(--text-muted);
+      }
+
+      .rd-card h3 {
+        margin: 0 0 4px;
+        font-size: 0.9rem;
+      }
+
+      .rd-card ul {
+        margin: 6px 0 0;
+        padding-left: 16px;
+      }
+
+      .rd-card ul li {
+        margin-bottom: 3px;
+      }
+
+      /* Partners */
+
+      .partners-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        font-size: 0.82rem;
+      }
+
+      .partner-pill {
+        border-radius: var(--radius-pill);
+        padding: 6px 11px;
+        background: rgba(15, 23, 42, 0.9);
+        border: 1px dashed rgba(148, 163, 184, 0.7);
+        color: var(--text-muted);
+      }
+
+      /* Team */
+
+      .team-grid {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        gap: 12px;
+        font-size: 0.82rem;
+        align-items: center;
+      }
+
+      .team-card {
+        display: flex; /* make it a flex container */
+        flex-direction: column; /* stack content vertically */
+        align-items: center; /* center horizontally */
+        justify-content: center; /* center vertically */
+        border-radius: var(--radius-md);
+        padding: 12px 10px;
+        background: rgba(15, 23, 42, 0.95);
+        border: 1px solid rgba(31, 41, 55, 0.95);
+        color: var(--text-muted);
+        align-items: center;
+        text-align: center;
+      }
+
+      .team-card strong {
+        display: block;
+        margin-bottom: 2px;
+        color: var(--text-main);
+        font-weight: 500;
+      }
+
+      /* CTA */
+
+      .cta-section {
+        text-align: center;
+      }
+
+      .cta-inner {
+        border-radius: 26px;
+        padding: 26px 18px;
+        background: radial-gradient(
+          circle at top,
+          rgba(56, 189, 248, 0.14),
+          #020617
+        );
+        border: 1px solid rgba(129, 140, 248, 0.7);
+        box-shadow: var(--shadow-soft);
+      }
+
+      .cta-title {
+        font-size: 1.4rem;
+        margin-bottom: 6px;
+        letter-spacing: -0.02em;
+      }
+
+      .cta-sub {
+        font-size: 0.92rem;
+        color: var(--text-muted);
+        margin-bottom: 18px;
+      }
+
+      .cta-buttons {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      /* Footer */
+
+      footer {
+        border-top: 1px solid rgba(15, 23, 42, 1);
+        background: #020617;
+        padding: 28px 0 22px;
+        font-size: 0.78rem;
+        color: var(--text-muted);
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 2fr repeat(3, minmax(0, 1fr));
+        gap: 18px;
+        margin-bottom: 14px;
+      }
+
+      .footer-heading {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        margin-bottom: 7px;
+        color: #e5e7eb;
+      }
+
+      .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .footer-links a {
+        color: var(--text-muted);
+      }
+
+      .footer-links a:hover {
+        color: #e5e7eb;
+      }
+
+      .footer-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        border-top: 1px solid rgba(31, 41, 55, 1);
+        padding-top: 10px;
+      }
+
+      .footer-badges {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .footer-badge {
+        border-radius: var(--radius-pill);
+        padding: 3px 8px;
+        border: 1px solid rgba(55, 65, 81, 1);
+      }
+
+      /* Responsive */
+
+      @media (max-width: 960px) {
+        .hero-grid {
+          grid-template-columns: minmax(0, 1fr);
+        }
+
+        .hero-orbit-card {
+          order: -1;
+        }
+
+        .about-grid,
+        .roadmap-layout {
+          grid-template-columns: minmax(0, 1fr);
+        }
+
+        .cards-row {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .integration-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .rd-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .team-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .footer-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .nav-links {
+          display: none;
+        }
+
+        .nav-mobile-toggle {
+          display: inline-flex;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .cards-row {
+          grid-template-columns: minmax(0, 1fr);
+        }
+
+        .integration-grid {
+          grid-template-columns: minmax(0, 1fr);
+        }
+
+        .rd-grid {
+          grid-template-columns: minmax(0, 1fr);
+        }
+
+        .team-grid {
+          grid-template-columns: minmax(0, 1fr);
+        }
+
+        .footer-grid {
+          grid-template-columns: minmax(0, 1fr);
+        }
+
+        .hero {
+          padding-top: 50px;
+        }
+
+        .section-shell {
+          padding: 0 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <!-- NAV -->
+      <header class="nav">
+        <div class="nav-shell">
+          <div class="nav-inner">
+            <a href="#top" class="logo-mark">
+              <div class="logo-icon">
+                <img
+                  src="newlogo.jpeg"
+                  alt="JyoteDevAI Logo"
+                  style="height: 40px; width: auto"
+                />
+              </div>
+              <div>
+                <div class="logo-text-main">JyoteDevAI Private Ltd</div>
+                <div class="logo-text-sub">Space • Intelligence • Life</div>
+              </div>
+            </a>
+            <nav class="nav-links">
+              <a href="#top">Home</a>
+              <a href="#aboutus">About Us</a>
+              <!-- <a href="#roadmap">Roadmap</a> -->
+              <!-- <a href="#integration">Cross‑Domain</a> -->
+              <!-- <a href="#rd">R&amp;D</a> -->
+              <a href="#contact">Contact Us</a>
+            </nav>
+            <!-- <div class="nav-cta">
+              <a href="#roadmap" class="btn btn-ghost">View 12‑Month Plan</a>
+              <a href="#contact" class="btn btn-primary">Partner / Invest</a>
+              <button class="nav-mobile-toggle" aria-label="Toggle navigation">
+                ☰
+              </button>
+            </div> -->
+          </div>
+        </div>
+      </header>
+
+      <main id="top">
+        <!-- HERO -->
+        <section class="hero">
+          <div class="section-shell hero-grid">
+            <div>
+              <!-- <div class="hero-pill">
+            <div class="pill-dot"></div>
+            <span>Deep‑tech at the intersection of Space, AI &amp; Biotech</span>
+          </div> -->
+              <h1 class="hero-title">
+                Human advancement through
+                <span>Space, Intelligence &amp; Life</span>.
+              </h1>
+              <br />
+              <p class="hero-sub">
+                We are building a unified platform where Space technology,
+                Artificial Intelligence, and Life sciences converge to create
+                breakthrough solutions backed by cross‑domain R&amp;D and to
+                integrate AI, Machine Learning(ML) and Data Analytics into Space
+                and Life sciences.
+              </p>
+              <br />
+              <div class="hero-ctas">
+                <a href="#vision" class="btn btn-primary">Explore the Vision</a>
+                <!-- <a href="#roadmap" class="btn btn-ghost">12‑Month Strategic Roadmap</a> -->
+              </div>
+            </div>
+            <div>
+              <div>
+                <img src="AIimage.png" />
+              </div>
+            </div>
+          </div>
+          <br />
+        </section>
+
+        <!-- VISION -->
+        <section id="vision">
+          <div class="section-shell">
+            <div class="section-header">
+              <!-- <div class="section-kicker">Vision</div> -->
+              <h2 class="section-kicker">Vision</h2>
+              <p class="section-desc">
+                Like the devoted squirrel of the Ramayana, whose small efforts
+                enabled a monumental mission, we combine agility, intelligence,
+                and purpose to develop advanced technologies that build the
+                nation’s future.
+              </p>
+            </div>
+          </div>
+          <!-- </section> -->
+          <!-- Mission -->
+          <!-- <section id="mission"> -->
+          <div class="section-shell">
+            <div class="section-header">
+              <!-- <div class="section-kicker">Vision</div> -->
+              <h2 class="section-kicker">Mission</h2>
+              <p class="section-desc">
+                We commit to progressing with the patience and determination of
+                a tortoise slow, steady, and unwavering toward humanitarian
+                service, impactful research, and technological support that
+                uplifts society and shapes a better future.
+              </p>
+            </div>
+          </div>
+          <!-- </section> -->
+          <!-- Goal -->
+          <!-- <section id="goal"> -->
+          <div class="section-shell">
+            <div class="section-header">
+              <!-- <div class="section-kicker">Vision</div> -->
+              <h2 class="section-kicker">Goal</h2>
+              <p class="section-desc">
+                To serve humanity and empower national growth by developing
+                advanced technologies through a structured, vigorous, and
+                truthful process that respects all statutory obligations.
+              </p>
+            </div>
+          </div>
+          <!-- </section> -->
+          <!-- Values -->
+          <!-- <section id="values"> -->
+          <div class="section-shell">
+            <div class="section-header">
+              <!-- <div class="section-kicker">Vision</div> -->
+              <h2 class="section-kicker">Core Values</h2>
+              <p class="section-desc">
+                At JyoteDevAI, we uphold a foundation built on ethics, honesty,
+                and truthfulness. Our approach is righteous and systematic,
+                ensuring every action is trustworthy, transparent, and in full
+                statutory compliance. We believe in clean execution, clear
+                communication, and the power of teamwork to drive innovation
+                that serves humanity and strengthens the nation.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- About Us -->
+        <section id="aboutus">
+          <div class="section-shell">
+            <div class="section-header">
+              <div class="section-kicker">About Us</div>
+              <p class="section-desc">Slogans : Work is worship - Slow & steady wins the race.</p>
+              <p class="section-desc">
+                Founded by eight passionate professionals with strong academic
+                backgrounds, our team combines a decade of experience in
+                entrepreneurship, aerospace, and information technology. We are
+                driven by a commitment to transform ideas into solutions that
+                serve society and advance technology.
+                <br /><br />We build AI systems that power enterprise
+                automation, predictive analytics, and cross‑domain intelligence
+                for healthcare, energy, and space. From nanosatellite concepts
+                to space‑data analytics, we explore how orbital platforms can
+                unlock new scientific and commercial value.
+              </p>
+              <ul class="section-desc">
+                <li>Small satellite technologies &amp; sensors</li>
+                <li>Space‑biotech experiments</li>
+                <li>Enterprise automation &amp; decision support</li>
+                <li>AI for healthcare and diagnostics</li>
+                <li>
+                  Partnerships with cloud providers (AWS, Azure, Google Cloud)
+                </li>
+                <li>
+                  Potential collaborations with ISRO, IN‑SPACe, private space
+                  companies, labs, hospitals, and universities
+                </li>
+                <li>Internship and training in Space and AI Domain</li>
+                <li>
+                  Research, experimental development, natural sciences and
+                  engineering
+                </li>
+              </ul>
+              <p class="section-desc">
+                We aim to stay closely connected to national and international
+                ecosystems, including space agencies, biotech councils, and
+                academic laboratories.
+              </p>
+              <div class="partners-row" style="margin-top: 10px">
+                <span class="partner-pill">ISRO &amp; IN‑SPACe</span>
+                <span class="partner-pill">MeitY AI programs</span>
+                <span class="partner-pill">DBT &amp; BIRAC (Biotech)</span>
+                <span class="partner-pill"
+                  >Innovation incubators &amp; accelerators</span
+                >
+                <span class="partner-pill"
+                  >Academic labs &amp; universities</span
+                >
+              </div>
+              <!-- Directors Section -->
+              <br />
+              <h2 class="section-title">Our Directors and Advisor team</h2>
+              <p class="section-desc">
+                Meet the visionaries guiding JyoteDevAI with leadership,
+                expertise, and dedication.
+              </p>
+            </div>
+
+            <div class="team-grid">
+              <!-- Director 1 -->
+              <div class="team-card">
+                <img
+                  src="lokesh_dir1.jpeg"
+                  alt="Director 1 Photo"
+                  style="
+                    width: 30%;
+                    height: 30%;
+                    border-radius: 12px;
+                    margin-bottom: 8px;
+                  "
+                />
+                <strong>Y Lokesh Naidu <br />Director</strong>
+                <p>
+                  Civil engineer with expertise in planning, costing,
+                  monitoring, execution, and people management—an area often
+                  considered the most challenging in today’s industry.<br />With
+                  over 18 years of working with leading firms, his passion for
+                  taking on challenging projects has driven the successful
+                  completion of numerous projects over the past 15 years.
+                </p>
+              </div>
+
+              <!-- Director 2 -->
+              <div class="team-card">
+                <img
+                  src="sai_dir2.jpg"
+                  alt="Director 2 Photo"
+                  style="
+                    width: 30%;
+                    height: 30%;
+                    border-radius: 12px;
+                    margin-bottom: 8px;
+                  "
+                />
+                <strong>Y Jyothi Sai <br />Director</strong>
+                <p>
+                  IT professional with good experience in Data science field.<br />With
+                  a strong foundation in computer science, combined with
+                  hands-on industry experience, contributed to many projects in
+                  data analysis.<br />Specialized in transforming complex
+                  datasets into clear statistical and actionable insights.
+                </p>
+              </div>
+              <!-- Advisor 1 -->
+              <div class="team-card">
+                <img
+                  src="nagaraja_adv1.jpeg"
+                  alt="Advisor Photo"
+                  style="
+                    width: 30%;
+                    height: 30%;
+                    border-radius: 12px;
+                    margin-bottom: 8px;
+                  "
+                />
+                <strong>K Nagaraja <br />Advisor/Consultant</strong>
+                <p>
+                  Electrical Engineer with 30+ years in the Aerospace
+                  industry.<br />
+                  Goal-oriented, experienced, collaboartive, active electrical
+                  engineer with over 40 years of industry experience.<br />Skilled
+                  in planning, design, installation, maintenance and testing of
+                  electrical equipment and test rigs.<br />Developed and
+                  qualified key electrical components and sensors in a fighter
+                  aircraft.<br />30+ years of experience in the Aerospace
+                  industry.<br />Well versed in industry electrical and aircraft
+                  standards.<br />Experienced adminstrator with proven record of
+                  successful project management.<br />With practical knowledge
+                  in mechatronics field.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact">
+          <div class="section-shell">
+            <div class="section-header">
+              <h2 class="section-kicker">Contact Us</h2>
+              <p class="section-desc">
+                Reach out to us for inquiries, collaborations, or visits. We're
+                here to connect and build together.
+              </p>
+            </div>
+
+            <div class="cards-row">
+              <!-- Location -->
+              <div class="card">
+                <div class="card-tag">Location</div>
+                <!-- <div class="card-title">Head Office</div> -->
+                <p>
+                  Block 2, Flat No.103<br />
+                  Vaddepally Enclave, Madhavaram Colony<br />
+                  Kukatpally, Hyderabad – Telangana 500072
+                </p>
+              </div>
+
+              <!-- Email -->
+              <div class="card">
+                <div class="card-tag">Email</div>
+                <!-- <div class="card-title">General Inquiries</div> -->
+                <p>
+                  <a href="mailto:info@jlcinfra.in">jyotedevai@gmail.com</a>
+                </p>
+              </div>
+
+              <!-- Call -->
+              <div class="card">
+                <div class="card-tag">Call</div>
+                <!-- <div class="card-title">Phone Support</div> -->
+                <p>
+                  <a href="tel:+919912346064">+91 9916144299</a>
+                </p>
+              </div>
+
+              <!-- Open Hours -->
+              <div class="card">
+                <div class="card-tag">Open Hours</div>
+                <!-- <div class="card-title">Working Days</div> -->
+                <p>
+                  Monday – Saturday<br />
+                  9:00 AM – 6:00 PM
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
